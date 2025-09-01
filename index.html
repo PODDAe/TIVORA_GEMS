@@ -827,6 +827,13 @@
             background: var(--secondary);
         }
         
+        /* WhatsApp Payment Button */
+        .whatsapp-payment {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
@@ -1093,103 +1100,43 @@
                     <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
-                                <label class="form-label" for="firstName">First Name *</label>
+                                <label class="form-label" for="firstName">First Name</label>
                                 <input type="text" id="firstName" class="form-input" required>
                             </div>
                         </div>
                         <div class="form-col">
                             <div class="form-group">
-                                <label class="form-label" for="lastName">Last Name *</label>
+                                <label class="form-label" for="lastName">Last Name</label>
                                 <input type="text" id="lastName" class="form-input" required>
                             </div>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="email">Email Address *</label>
+                        <label class="form-label" for="email">Email Address</label>
                         <input type="email" id="email" class="form-input" required>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="phone">Phone Number *</label>
+                        <label class="form-label" for="phone">Phone Number</label>
                         <input type="tel" id="phone" class="form-input" required>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="address">Shipping Address *</label>
-                        <input type="text" id="address" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-col">
-                            <div class="form-group">
-                                <label class="form-label" for="city">City *</label>
-                                <input type="text" id="city" class="form-input" required>
-                            </div>
-                        </div>
-                        <div class="form-col">
-                            <div class="form-group">
-                                <label class="form-label" for="zipCode">ZIP / Postal Code *</label>
-                                <input type="text" id="zipCode" class="form-input" required>
-                            </div>
-                        </div>
+                        <label class="form-label" for="address">Shipping Address</label>
+                        <textarea id="address" class="form-input" rows="3" required></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" for="country">Country *</label>
-                        <input type="text" id="country" class="form-input" required>
+                        <label class="form-label" for="notes">Order Notes (optional)</label>
+                        <textarea id="notes" class="form-input" rows="3" placeholder="Special instructions for your order..."></textarea>
                     </div>
                     
-                    <h3 class="form-label">Payment Method *</h3>
-                    <div class="payment-methods">
-                        <div class="payment-method" data-method="credit-card">
-                            <div class="payment-icon">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <p>Credit Card</p>
-                        </div>
-                        <div class="payment-method" data-method="paypal">
-                            <div class="payment-icon">
-                                <i class="fab fa-paypal"></i>
-                            </div>
-                            <p>PayPal</p>
-                        </div>
-                        <div class="payment-method" data-method="bank-transfer">
-                            <div class="payment-icon">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <p>Bank Transfer</p>
-                        </div>
+                    <div class="whatsapp-payment">
+                        <a href="https://wa.me/94763398606?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order." class="btn" target="_blank" id="whatsappOrderBtn">
+                            <i class="fab fa-whatsapp"></i> Complete Order via WhatsApp
+                        </a>
                     </div>
-                    
-                    <div id="creditCardForm" style="display: none;">
-                        <div class="form-group">
-                            <label class="form-label" for="cardNumber">Card Number *</label>
-                            <input type="text" id="cardNumber" class="form-input" placeholder="1234 5678 9012 3456">
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-col">
-                                <div class="form-group">
-                                    <label class="form-label" for="expiryDate">Expiry Date *</label>
-                                    <input type="text" id="expiryDate" class="form-input" placeholder="MM/YY">
-                                </div>
-                            </div>
-                            <div class="form-col">
-                                <div class="form-group">
-                                    <label class="form-label" for="cvv">CVV *</label>
-                                    <input type="text" id="cvv" class="form-input" placeholder="123">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="cardName">Name on Card *</label>
-                            <input type="text" id="cardName" class="form-input">
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="submit-order">Place Order</button>
                 </form>
             </div>
         </div>
@@ -1201,35 +1148,34 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About TIVORA Gemstones</h2>
-                    <p>We are a trusted supplier of premium quality gemstones from Sri Lanka, the island known as the "Jewel Box of the Indian Ocean". Our gemstones are ethically sourced and handpicked for their exceptional quality and beauty.</p>
+                    <p>TIVORA Gemstones is a trusted supplier of premium quality gemstones sourced directly from the mineral-rich lands of Sri Lanka, also known as the "Jewel Box of the Indian Ocean".</p>
                     
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-gem"></i>
                             </div>
-                            <p>100% Natural Gemstones</p>
+                            <p>100% natural gemstones with certification available</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-award"></i>
                             </div>
-                            <p>Certified Quality</p>
+                            <p>Expertly cut and polished for maximum brilliance</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shipping-fast"></i>
                             </div>
-                            <p>Worldwide Shipping</p>
+                            <p>Worldwide shipping with secure packaging</p>
                         </div>
                     </div>
                     
-                    <a href="https://wa.me/94763398606?text=Hi%2C%20I'd%20like%20to%20learn%20more%20about%20your%20gemstones." class="btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Contact Us
-                    </a>
+                    <p>With decades of experience in the gemstone industry, we pride ourselves on offering authentic, high-quality gemstones at competitive prices for collectors, jewelers, and enthusiasts alike.</p>
                 </div>
+                
                 <div class="about-image">
-                    <img src="https://github.com/PODDAe/gemweb/blob/main/images/WhatsApp%20Image%202025-08-30%20at%2015.57.53_8b8d7d9c.jpg?raw=true" alt="About TIVORA Gemstones">
+                    <img src="https://github.com/PODDAe/gemweb/blob/main/images/541185251_3736522533318370_8670444737996874623_n%20(1).jpg?raw=true" alt="TIVORA Gemstones">
                 </div>
             </div>
         </div>
@@ -1240,7 +1186,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Contact Us</h2>
-                <p>Get in touch with us for any inquiries or custom orders</p>
+                <p>Reach out to us for inquiries, custom orders, or wholesale pricing</p>
             </div>
             
             <div class="contact-methods">
@@ -1249,8 +1195,8 @@
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <h3>WhatsApp</h3>
-                    <p>+94 76 339 8606</p>
-                    <a href="https://wa.me/94763398606?text=Hi%2C%20I'm%20interested%20in%20your%20gemstones." class="btn" target="_blank">Message Now</a>
+                    <p>Fastest response for inquiries and orders</p>
+                    <a href="https://wa.me/94763398606?text=Hi%2C%20I'm%20interested%20in%20your%20gemstones." class="btn" target="_blank">Message Us</a>
                 </div>
                 
                 <div class="contact-card">
@@ -1258,17 +1204,17 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Email</h3>
-                    <p>info@tivoragemstones.com</p>
-                    <a href="mailto:info@tivoragemstones.com" class="btn btn-secondary">Send Email</a>
+                    <p>Send us detailed inquiries</p>
+                    <a href="mailto:info@tivoragemstones.com" class="btn btn-secondary">Email Us</a>
                 </div>
                 
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-phone"></i>
                     </div>
-                    <h3>Location</h3>
-                    <p>Colombo, Sri Lanka</p>
-                    <a href="https://goo.gl/maps/yourlocation" class="btn btn-secondary" target="_blank">View on Map</a>
+                    <h3>Phone</h3>
+                    <p>Call us during business hours</p>
+                    <a href="tel:+94763398606" class="btn btn-secondary">Call Now</a>
                 </div>
             </div>
         </div>
@@ -1280,12 +1226,12 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>TIVORA Gemstones</h3>
-                    <p>Your trusted source for premium quality gemstones from Sri Lanka. We offer a wide selection of natural gemstones for jewelry, collections, and investments.</p>
+                    <p>Your trusted source for premium quality gemstones from Sri Lanka. We offer a wide selection of natural gemstones for jewelry making, collection, and investment.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -1300,28 +1246,24 @@
                 <div class="footer-column">
                     <h3>Customer Service</h3>
                     <a href="#">Shipping Policy</a>
-                    <a href="#">Return Policy</a>
+                    <a href="#">Returns & Refunds</a>
+                    <a href="#">Gemstone Care</a>
                     <a href="#">FAQ</a>
-                    <a href="#">Privacy Policy</a>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone"></i> +94 76 339 8606</p>
-                    <p><i class="fab fa-whatsapp"></i> WhatsApp Available</p>
-                    <p><i class="fas fa-envelope"></i> info@tivoragemstones.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</p>
+                    <p><i class="fas fa-phone"></i> +94 76 339 8606</p>
+                    <p><i class="fas fa-envelope"></i> info@tivoragemstones.com</p>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 TIVORA Gemstones. All Rights Reserved.</p>
+                <p>&copy; 2023 TIVORA Gemstones. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- YouTube Music Player iframe (hidden) -->
-    <iframe id="youtubePlayer" width="0" height="0" src="https://www.youtube.com/embed/1ZYbU82GVz4?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: none;"></iframe>
 
     <script>
         // DOM Elements
@@ -1333,21 +1275,17 @@
         const cartItems = document.getElementById('cartItems');
         const cartCount = document.getElementById('cartCount');
         const cartTotal = document.getElementById('cartTotal');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
         const checkoutBtn = document.getElementById('checkoutBtn');
         const checkoutSection = document.getElementById('checkoutSection');
-        const musicPlayer = document.getElementById('musicPlayer');
         const musicToggle = document.getElementById('musicToggle');
+        const musicPlayer = document.getElementById('musicPlayer');
         const stopMusic = document.getElementById('stopMusic');
         const volumeSlider = document.getElementById('volumeSlider');
-        const youtubePlayer = document.getElementById('youtubePlayer');
-        const paymentMethods = document.querySelectorAll('.payment-method');
-        const creditCardForm = document.getElementById('creditCardForm');
-        const orderForm = document.getElementById('orderForm');
-
+        const whatsappOrderBtn = document.getElementById('whatsappOrderBtn');
+        
         // Cart items array
         let cart = [];
-
+        
         // Theme Switching
         themeSwitcher.addEventListener('click', () => {
             document.body.classList.toggle('dark-theme');
@@ -1357,32 +1295,32 @@
                 themeSwitcher.innerHTML = '<i class="fas fa-moon"></i>';
             }
         });
-
-        // Cart Functionality
+        
+        // Cart Toggle
         cartIcon.addEventListener('click', () => {
             cartSidebar.classList.add('open');
             overlay.classList.add('active');
         });
-
+        
         closeCart.addEventListener('click', () => {
             cartSidebar.classList.remove('open');
             overlay.classList.remove('active');
         });
-
+        
         overlay.addEventListener('click', () => {
             cartSidebar.classList.remove('open');
             overlay.classList.remove('active');
         });
-
-        // Add to Cart
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const id = button.getAttribute('data-id');
-                const name = button.getAttribute('data-name');
-                const price = parseFloat(button.getAttribute('data-price'));
-                const image = button.getAttribute('data-image');
+        
+        // Add to Cart Functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const id = e.target.getAttribute('data-id');
+                const name = e.target.getAttribute('data-name');
+                const price = parseFloat(e.target.getAttribute('data-price'));
+                const image = e.target.getAttribute('data-image');
                 
-                // Check if item already in cart
+                // Check if item already exists in cart
                 const existingItem = cart.find(item => item.id === id);
                 
                 if (existingItem) {
@@ -1404,14 +1342,20 @@
                 overlay.classList.add('active');
             });
         });
-
-        // Update Cart
+        
+        // Update Cart Function
         function updateCart() {
             // Update cart count
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
             cartCount.textContent = totalItems;
             
-            // Update cart items
+            // Update cart total
+            const total = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
             if (cart.length === 0) {
                 cartItems.innerHTML = `
                     <div class="empty-cart">
@@ -1420,32 +1364,33 @@
                     </div>
                 `;
             } else {
-                cartItems.innerHTML = '';
+                // Add items to cart
                 cart.forEach(item => {
-                    const cartItemElement = document.createElement('div');
-                    cartItemElement.classList.add('cart-item');
-                    cartItemElement.innerHTML = `
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
                         <div class="cart-item-img">
                             <img src="${item.image}" alt="${item.name}">
                         </div>
                         <div class="cart-item-details">
                             <h4>${item.name}</h4>
-                            <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                            <p>$${item.price.toFixed(2)} each</p>
+                            <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
                             <div class="cart-item-quantity">
                                 <button class="quantity-btn decrease" data-id="${item.id}">-</button>
-                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
                                 <button class="quantity-btn increase" data-id="${item.id}">+</button>
                             </div>
                             <button class="remove-item" data-id="${item.id}">Remove</button>
                         </div>
                     `;
-                    cartItems.appendChild(cartItemElement);
+                    cartItems.appendChild(cartItem);
                 });
                 
-                // Add event listeners to quantity buttons
+                // Add event listeners for quantity buttons
                 document.querySelectorAll('.increase').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const id = button.getAttribute('data-id');
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
                         const item = cart.find(item => item.id === id);
                         item.quantity += 1;
                         updateCart();
@@ -1453,136 +1398,62 @@
                 });
                 
                 document.querySelectorAll('.decrease').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const id = button.getAttribute('data-id');
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
                         const item = cart.find(item => item.id === id);
                         if (item.quantity > 1) {
                             item.quantity -= 1;
-                        } else {
-                            cart = cart.filter(item => item.id !== id);
+                            updateCart();
                         }
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-input').forEach(input => {
+                    input.addEventListener('change', (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        const item = cart.find(item => item.id === id);
+                        item.quantity = parseInt(e.target.value);
                         updateCart();
                     });
                 });
                 
                 document.querySelectorAll('.remove-item').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const id = button.getAttribute('data-id');
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
                         cart = cart.filter(item => item.id !== id);
                         updateCart();
                     });
                 });
             }
-            
-            // Update cart total
-            const total = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            cartTotal.textContent = `$${total.toFixed(2)}`;
         }
-
+        
         // Checkout Button
         checkoutBtn.addEventListener('click', () => {
             if (cart.length > 0) {
                 cartSidebar.classList.remove('open');
-                overlay.classList.remove('active');
                 checkoutSection.style.display = 'block';
-                window.scrollTo({
-                    top: checkoutSection.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+                
+                // Scroll to checkout section
+                checkoutSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
-
-        // Music Player Functionality
-        let player;
-        let isPlaying = false;
-
-        // This function is called by the YouTube API when it's ready
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtubePlayer', {
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            // Player is ready
-            event.target.setVolume(50); // Set initial volume to 50%
-        }
-
-        function onPlayerStateChange(event) {
-            // Player state changed
-            if (event.data === YT.PlayerState.PLAYING) {
-                isPlaying = true;
-                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-                isPlaying = false;
-                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        }
-
-        // Toggle music player visibility
+        
+        // Music Player
+        let audio = null;
+        
         musicToggle.addEventListener('click', () => {
-            if (isPlaying) {
-                player.pauseVideo();
-                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-            } else {
-                player.playVideo();
-                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-            }
-            isPlaying = !isPlaying;
+            musicPlayer.classList.toggle('hidden');
         });
-
-        // Stop music
+        
         stopMusic.addEventListener('click', () => {
-            player.stopVideo();
-            isPlaying = false;
-            musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
         });
-
-        // Volume control
-        volumeSlider.addEventListener('input', () => {
-            const volume = volumeSlider.value * 100;
-            player.setVolume(volume);
-        });
-
-        // Show music player after a delay
-        setTimeout(() => {
-            musicPlayer.classList.remove('hidden');
-        }, 3000);
-
-        // Payment method selection
-        paymentMethods.forEach(method => {
-            method.addEventListener('click', () => {
-                // Remove selected class from all methods
-                paymentMethods.forEach(m => m.classList.remove('selected'));
-                
-                // Add selected class to clicked method
-                method.classList.add('selected');
-                
-                // Show credit card form if credit card is selected
-                const paymentMethod = method.getAttribute('data-method');
-                if (paymentMethod === 'credit-card') {
-                    creditCardForm.style.display = 'block';
-                } else {
-                    creditCardForm.style.display = 'none';
-                }
-            });
-        });
-
-        // Form submission
-        orderForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your order! We will contact you shortly to confirm your order details.');
-            // Here you would typically send the form data to your server
-        });
-
-        // Load YouTube API
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        // Initialize cart
+        updateCart();
     </script>
 </body>
 </html>
