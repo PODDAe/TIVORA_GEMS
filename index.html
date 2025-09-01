@@ -118,6 +118,81 @@
             font-weight: bold;
         }
         
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 999;
+            background: var(--card-bg);
+            border-radius: 50px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .music-player.hidden {
+            transform: translateX(calc(100% + 20px));
+        }
+        
+        .music-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1.2rem;
+        }
+        
+        .music-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .volume-slider {
+            width: 80px;
+            -webkit-appearance: none;
+            height: 5px;
+            border-radius: 5px;
+            background: var(--light);
+            outline: none;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .stop-music {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
         /* Theme Switcher */
         .theme-switcher {
             position: fixed;
@@ -683,6 +758,23 @@
             .product-actions {
                 flex-direction: column;
             }
+            
+            .music-player {
+                bottom: 70px;
+                right: 10px;
+                flex-direction: column;
+                border-radius: 25px;
+                padding: 10px;
+            }
+            
+            .music-controls {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .volume-control {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -710,6 +802,21 @@
             </div>
         </div>
     </header>
+
+    <!-- Music Player -->
+    <div class="music-player hidden" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle">
+            <i class="fas fa-music"></i>
+        </button>
+        <div class="music-controls">
+            <div class="volume-control">
+                <i class="fas fa-volume-down"></i>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+                <i class="fas fa-volume-up"></i>
+            </div>
+            <button class="stop-music" id="stopMusic">Stop</button>
+        </div>
+    </div>
 
     <!-- Theme Switcher -->
     <div class="theme-switcher" id="themeSwitcher">
@@ -986,6 +1093,12 @@
         </div>
     </footer>
 
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/01/20/audio_d1718ab41b.mp3?filename=relaxing-music-meditation-121399.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         // DOM Elements
         const themeSwitcher = document.getElementById('themeSwitcher');
@@ -998,6 +1111,13 @@
         const cartTotal = document.getElementById('cartTotal');
         const checkoutBtn = document.getElementById('checkoutBtn');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Music Player Elements
+        const musicPlayer = document.getElementById('musicPlayer');
+        const musicToggle = document.getElementById('musicToggle');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const stopMusic = document.getElementById('stopMusic');
+        const backgroundMusic = document.getElementById('backgroundMusic');
         
         // Cart Data
         let cart = [];
@@ -1012,6 +1132,59 @@
             } else {
                 themeSwitcher.innerHTML = '<i class="fas fa-moon"></i>';
             }
+        });
+        
+        // Music Player Functions
+        function toggleMusicPlayer() {
+            musicPlayer.classList.toggle('hidden');
+        }
+        
+        function playBackgroundMusic() {
+            backgroundMusic.play()
+                .then(() => {
+                    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                })
+                .catch(error => {
+                    console.log('Auto-play was prevented:', error);
+                    // Show music player if autoplay was prevented
+                    musicPlayer.classList.remove('hidden');
+                });
+        }
+        
+        function pauseBackgroundMusic() {
+            backgroundMusic.pause();
+            musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+        }
+        
+        function stopBackgroundMusic() {
+            backgroundMusic.pause();
+            backgroundMusic.currentTime = 0;
+            musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+        }
+        
+        function setVolume() {
+            backgroundMusic.volume = volumeSlider.value;
+        }
+        
+        // Initialize music volume
+        setVolume();
+        
+        // Music Player Event Listeners
+        musicToggle.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                playBackgroundMusic();
+            } else {
+                pauseBackgroundMusic();
+            }
+        });
+        
+        volumeSlider.addEventListener('input', setVolume);
+        
+        stopMusic.addEventListener('click', stopBackgroundMusic);
+        
+        // Try to autoplay music when page loads
+        window.addEventListener('load', () => {
+            setTimeout(playBackgroundMusic, 1000);
         });
         
         // Cart Functions
